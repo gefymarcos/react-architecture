@@ -13,16 +13,16 @@ export const clickButton = (value: string) => {
 };
 
 export const getCityByName = async (name: string) => {
-  const response: ApolloQueryResult<CityQuery> = await apolloClient.query({
+  const { data }: ApolloQueryResult<CityQuery> = await apolloClient.query({
     query: GET_CITY_BY_NAME,
     variables: {
       name
     }
   });
-
+  console.log("data: ", data);
   return citiesVar({
     ...citiesVar(),
-    name: response?.data?.getCityByName.country,
+    name: data?.getCityByName.country,
     loaded: true
   });
 };

@@ -8,7 +8,9 @@ function ClickPageContainer() {
   const city = useReactiveVar(citiesVar);
 
   useEffect(() => {
+    console.log("city -->> ", city);
     if (!city.loaded) {
+      console.log("entrou -->> ", city);
       getCityByName("New York");
     }
   }, [city]);
