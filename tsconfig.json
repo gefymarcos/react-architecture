@@ -24,10 +24,6 @@
     "rootDirs": ["./src/assets"],
     "baseUrl": ".",
     "typeRoots": ["./node_modules/@types", "./src/assets/js/types"],
-    "paths": {
-      "core/*": ["./node_modules/cifraclub-core/dist/*"],
-      "coreAds/*": ["./node_modules/cifraclub-ads/dist/*"]
-    }
   },
   "include": ["src/**/*", "./node_modules/pagarme-js-types/dist/**/*"],
   "exclude": ["dist", "config"]

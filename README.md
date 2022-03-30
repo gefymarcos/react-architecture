@@ -1,6 +1,6 @@
-# Projeto afinador do Cifraclub Web
+# Projeto base da arquitetura com graphql
 
-- Projeto criado para centralizar o código do afinador e permitir reutilizar ele em outros projetos.
+- Projeto criado para exemplificar a arquitetura aplicada com graphql.
 
 ## Executando
 
