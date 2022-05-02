@@ -1,34 +1,30 @@
 import React from "react";
-import { render } from "@testing-library/react";
-// import { MockedProvider } from "@apollo/client/testing";
-// import { InMemoryCache } from "@apollo/client";
-import ClickPageContainer from ".";
-// import { GET_CITY_BY_NAME } from "../../modules/queries";
+import { render, screen } from "@testing-library/react";
 
-// const mocks = [
-//   {
-//     request: {
-//       query: GET_CITY_BY_NAME,
-//       variables: {
-//         name: "New York"
-//       }
-//     },
-//     result: {
-//       data: {
-//         country: { name: "US" }
-//       }
-//     }
-//   }
-// ];
+import ClickPageContainer from ".";
+import { startMockWith } from "../../config/mockedProvider";
+
+const data = {
+  getCityByName: jest.fn().mockResolvedValue({
+    country: jest.fn().mockResolvedValue("US")
+  })
+};
+
+const reactiveVar = {
+  city: {
+    name: "",
+    loaded: false
+  }
+};
+
+beforeAll(() => {
+  startMockWith([{ data, reactiveVar }]);
+});
 
 describe("clickPage", () => {
   it("must have click in the button", async () => {
-    // const cache = new InMemoryCache();
+    render(<ClickPageContainer />);
 
-    render(
-      // <MockedProvider cache={cache} mocks={mocks} addTypename={false}>
-      <ClickPageContainer />
-      // </MockedProvider>
-    );
+    screen.getByText("US");
   });
 });

@@ -1,6 +1,6 @@
 import React from "react";
-import { clickApolloButton } from "../../modules/actions";
-import { ClickPageProps } from "../../modules/types";
+import { clickApolloButton } from "../../modules/clickPage/actions";
+import { ClickPageProps } from "../../modules/clickPage/types";
 
 function ClickPage({ value }: ClickPageProps) {
   return (

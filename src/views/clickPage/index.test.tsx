@@ -1,9 +1,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import ClickPage from ".";
-import { clickApolloButton } from "../../modules/actions";
+import { clickApolloButton } from "../../modules/clickPage/actions";
 
-jest.mock("../../modules/actions", () => {
+jest.mock("../../modules/clickPage/actions", () => {
   return {
     clickApolloButton: jest.fn()
   };
