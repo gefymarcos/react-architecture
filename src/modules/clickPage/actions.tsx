@@ -1,5 +1,5 @@
 import { ClickPage } from "./enums";
-import loadCountryByCity from "../../data/usecases/loadCountryByCity";
+import loadCountryByCity from "../../data/usecases/loadCountryBy/loadCountryByCity";
 import { citiesVar } from "./vars";
 
 export const clickButton = (value: string) => {
