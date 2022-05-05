@@ -1,8 +1,9 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 
 import ClickPageContainer from ".";
 import { startMockWith } from "../../config/mockedProvider";
+import { getCityByName } from "../../modules/clickPage/actions";
 
 const data = {
   getCityByName: jest.fn().mockResolvedValue({
@@ -10,9 +11,16 @@ const data = {
   })
 };
 
+jest.mock("../../modules/clickPage/actions", () => {
+  return {
+    getCityByName: jest.fn()
+  };
+});
+
 const reactiveVar = {
   city: {
     name: "",
+    city: "",
     loaded: false
   }
 };
@@ -25,6 +33,6 @@ describe("clickPage", () => {
   it("must have click in the button", async () => {
     render(<ClickPageContainer />);
 
-    screen.getByText("US");
+    expect(getCityByName).toHaveBeenCalledWith("New York");
   });
 });

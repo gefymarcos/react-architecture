@@ -11,11 +11,11 @@ jest.mock("../../modules/clickPage/actions", () => {
 
 describe("clickPage", () => {
   it("must have click in the button", async () => {
-    const component = render(<ClickPage value="teste" />);
+    const component = render(<ClickPage value="teste" city="" />);
     const button = await component.findByRole("button");
 
     await button.click();
 
-    expect(clickApolloButton).toHaveBeenCalledWith("clicou");
+    expect(clickApolloButton).toHaveBeenCalledWith("BR");
   });
 });

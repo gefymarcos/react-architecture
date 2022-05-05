@@ -6,7 +6,7 @@ import {
 } from "../../data/protocols/http/apollo-client";
 import apolloClient from "../../config/apollo";
 
-export class ApolloClient implements HttpGraphqlClient<any, any> {
+export class HttpClient implements HttpGraphqlClient<any, any> {
   async query<T>({ query, variables }: HttpQueryParams<T>) {
     const { data }: ApolloQueryResult<T> = await apolloClient.query({
       query,

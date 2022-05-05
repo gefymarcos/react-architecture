@@ -13,7 +13,7 @@ function ClickPageContainer() {
     }
   }, [city]);
 
-  return <ClickPage value={city.name} />;
+  return <ClickPage value={city.name} city={city.city} />;
 }
 
 export default ClickPageContainer;

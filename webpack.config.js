@@ -12,7 +12,7 @@ module.exports = {
     rules: [
       // Typescript
       {
-        test: /\.?tsx$/,
+        test: /\.?ts(x)?$/,
         exclude: /node_modules/,
         use: "ts-loader"
       },
@@ -28,19 +28,30 @@ module.exports = {
       },
       // CSS, PostCSS, and Sass
       {
-        test: /\.(scss|css)$/,
+        test: /\.s[ac]ss$/i,
         use: [
           "style-loader",
-          "css-loader",
-          "postcss-loader",
-          "sass-loader",
-          "@babel/preset-react"
+          {
+            loader: "css-loader",
+            options: {
+              esModule: true,
+              modules: {
+                localIdentName: "[local]",
+                exportGlobals: true
+              }
+            }
+          },
+          "sass-loader"
         ]
       }
     ]
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js", ".scss"]
+    extensions: [".tsx", ".ts", ".js", ".scss"],
+    fallback: {
+      fs: false,
+      path: require.resolve("path-browserify")
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({

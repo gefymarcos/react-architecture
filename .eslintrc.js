@@ -37,6 +37,7 @@ module.exports = {
     "no-shadow": "off",
     "no-plusplus": "off",
     "default-param-last": "off",
+    "class-methods-use-this": "off",
     "no-console": ["error", { allow: ["warn", "error", "info", "debug"] }],
     "no-irregular-whitespace": "off",
     "no-unused-expressions": ["error", { allowTernary: true }],
