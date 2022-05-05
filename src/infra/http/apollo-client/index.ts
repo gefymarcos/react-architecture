@@ -1,10 +1,10 @@
 import { ApolloQueryResult, FetchResult } from "@apollo/client";
+import apolloClient from "../../../config/apollo";
 import {
   HttpGraphqlClient,
   HttpMutationParams,
   HttpQueryParams
-} from "../../data/protocols/http/apollo-client";
-import apolloClient from "../../config/apollo";
+} from "../protocols/graphql-client";
 
 export class HttpClient implements HttpGraphqlClient<any, any> {
   async query<T>({ query, variables }: HttpQueryParams<T>) {
