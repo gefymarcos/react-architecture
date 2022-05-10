@@ -1,0 +1,9 @@
+/node_modules/
+/.awcache/
+*.scss.d.ts
+/.cache/
+.DS_Store
+/dist/
+/server/critical/*
+
+**/__coverage__/
