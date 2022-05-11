@@ -29,7 +29,7 @@ const getUsersAction = () => async (dispatch: AppDispatch) => {
     const users = await fetchUsers();
     dispatch(usersFullFilled(users));
   } catch (err) {
-    console.warn("err at validate coupon", err);
+    console.warn("err at load user information", err);
     dispatch(usersFullRejected(err));
   }
 };

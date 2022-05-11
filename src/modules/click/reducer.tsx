@@ -3,7 +3,6 @@ import { ClickPage } from "./enums";
 
 export type ClickPageProps = {
   value: string;
-  users: any;
 };
 
 export type ClickPageAction = {
@@ -14,8 +13,7 @@ export type ClickPageAction = {
 export type ClickPageReducer = Reducer<ClickPageProps, ClickPageAction>;
 
 const initialState: ClickPageProps = {
-  value: "ainda não",
-  users: {}
+  value: "ainda não"
 };
 
 const clickReducer: ClickPageReducer = (
@@ -23,7 +21,6 @@ const clickReducer: ClickPageReducer = (
   action: ClickPageAction
 ) => {
   const { type, payload } = action;
-
   switch (type) {
     case ClickPage.VALUE:
       return {

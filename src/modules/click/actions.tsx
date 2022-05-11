@@ -1,8 +1,10 @@
 import { ClickPage } from "./enums";
 
-export const clickButton = (value: string) => {
+const clickButtonAction = (value: string) => {
   return {
     type: ClickPage.VALUE,
     payload: value
   };
 };
+
+export { clickButtonAction };

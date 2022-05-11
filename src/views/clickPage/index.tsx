@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { clickButton } from "../../modules/click/actions";
+import { clickButtonAction } from "../../modules/click/actions";
 import { ClickPageProps } from "../../modules/click/types";
 
 function ClickPage({ value, user }: ClickPageProps) {
@@ -8,7 +8,10 @@ function ClickPage({ value, user }: ClickPageProps) {
 
   return (
     <>
-      <button type="button" onClick={() => dispatch(clickButton("clicou"))}>
+      <button
+        type="button"
+        onClick={() => dispatch(clickButtonAction("clicou"))}
+      >
         Click aqui!
       </button>
       <p>já clicou?: {value}</p>
